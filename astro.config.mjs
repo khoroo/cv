@@ -23,5 +23,6 @@ export default defineConfig({
   },
   devToolbar: { enabled: false },
   integrations: [pdf(options)],
-  base: '/cv/',
+  site: 'https://robert.sparks.me.uk',
+  base: 'cv',
 });
