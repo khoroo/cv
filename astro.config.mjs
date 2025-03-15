@@ -8,7 +8,7 @@ const CV_DATA_FILE = process.env.CV_DATA_FILE || 'cv_data.json';
 
 const options = {
   pages: {
-    '/': 'cv.pdf',
+    '/cv/': 'cv.pdf',
   }
 }
 
