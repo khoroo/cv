@@ -1,0 +1,122 @@
+---
+import "../styles/global.css";
+import SectionHeader from "../components/SectionHeader.astro";
+import ExperienceEntry from "../components/ExperienceEntry.astro";
+import Skills from "../components/Skills.astro";
+
+// Import CV data from src/data
+import cv from "../data/cv_data.json";
+
+// Helper function for icons
+const renderIcon = (icon: string): string => {
+	if (icon === "linkedin") {
+		return `<svg width="16" height="16" viewBox="0 0 171.17006 170.83134" version="1.1" aria-hidden="true" style="display: inline-block; vertical-align: middle;">
+              <g transform="translate(-612.65109,-445.73612)">
+                <path style="fill:#2867b2" d="m 621.36506,616.125 c -5.76547,-1.85157 -9.53399,-7.88474 -8.56116,-13.80381 0,-49.06781 0,-98.13563 0,-147.20345 1.93844,-5.24164 6.84844,-10.27591 12.8238,-9.2468 49.69872,0 99.39745,0 149.09617,0 5.50164,2.01692 9.94406,7.5849 8.96,13.59357 0,49.23987 0,98.47975 0,147.71962 -1.93838,5.24272 -6.84845,10.27308 -12.8238,9.24986 -49.47079,-0.0681 -98.94678,0.35367 -148.41343,-0.19065 l -1.08158,-0.11829 z m 42.15884,-65.45406 c 0,-13.65333 0,-27.30667 0,-40.96 -8.53333,0 -17.06667,0 -25.6,0 0,27.30667 0,54.61333 0,81.92 8.53333,0 17.06667,0 25.6,0 0,-13.65333 0,-27.30667 0,-40.96 z m 41.36505,17.2 c 0.49188,-9.64585 -1.01459,-19.63592 1.58528,-29.01264 2.51469,-8.05391 12.47774,-10.41705 19.55069,-7.44053 8.45459,4.60651 6.53904,15.60146 6.89607,23.61761 0.0509,12.19844 0.0299,24.39704 0.043,36.59556 8.54599,0 17.09198,0 25.63797,0 -0.27048,-19.50904 0.27243,-39.05432 -0.72479,-58.53422 -1.04772,-11.24929 -8.49906,-22.63689 -20.2822,-24.51799 -11.52463,-2.86372 -25.18011,-0.15225 -32.22289,10.11659 -2.4697,5.08962 -1.24442,-2.05372 -1.52809,-4.28768 0.74255,-3.75704 -0.34788,-5.6811 -4.34677,-4.6967 -6.76441,0 -13.52882,0 -20.29323,0 0,27.30667 0,54.61333 0,81.92 8.52203,0 17.04406,0 25.56609,0 0.0396,-7.92 0.0793,-15.84 0.11892,-23.76 z m -49.71416,-69.96626 c 10.98336,-2.8443 13.87036,-18.86216 4.82332,-25.54514 -8.28385,-7.48222 -23.47373,-1.45213 -23.92057,9.86619 -1.4792,9.81103 8.55039,18.57212 18.08499,15.93739 l 1.01226,-0.25848 z" id="path1" />
+              </g>
+            </svg>`;
+	} else if (icon === "github") {
+		return `<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" style="display: inline-block; vertical-align: middle;">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.48.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.696-2.782.602-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.027 1.531 1.027.892 1.526 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.258-4.551-1.11-4.551-4.935 0-1.09.39-1.988 1.029-2.688-.103-.258-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026.797-.22 1.65-.33 2.503-.33.854 0 1.708.11 2.503.33 1.91-1.296 2.75-1.026 2.75-1.026.546 1.378.202 2.392.098 2.65.64.7 1.028 1.598 1.028 2.688 0 3.834-2.339 4.675-4.566 4.922.359.309.675.92.675 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.687.479C19.137 20.156 22 16.425 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path>
+            </svg>`;
+	} else {
+		return icon;
+	}
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{cv.personal.name} - CV</title>
+	</head>
+	<body class="font-sans bg-white text-black">
+		<div class="page">
+			<header class="text-center mb-8">
+				<h1 class="text-3xl font-bold">{cv.personal.name}</h1>
+			</header>
+
+			<section class="mb-6">
+				<SectionHeader title="Contact" />
+				<div class="grid grid-cols-2 gap-2">
+					{
+						cv.personal.contacts.map((contact) => (
+							<p>
+								<span
+									class="font-bold"
+									set:html={renderIcon(contact.icon)}
+								/>
+								<a
+									href={contact.link}
+									class="text-blue-500 hover:underline"
+								>
+									{contact.text}
+								</a>
+							</p>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="mb-6">
+				<SectionHeader title="Summary" />
+				<p>{cv.summary}</p>
+			</section>
+
+			<section class="mb-6">
+				<SectionHeader title="Technical Skills" />
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+					{cv.skills.map((skill) => <Skills skills={skill} />)}
+				</div>
+			</section>
+
+			<section class="mb-6">
+				<SectionHeader title="Experience" />
+
+				{
+					cv.experience.map((job) => (
+						<ExperienceEntry
+							title={job.title}
+							time={job.time}
+							location={job.location}
+							description={job.description}
+							listItems={job.listItems}
+						/>
+					))
+				}
+			</section>
+
+			<section class="mb-6">
+				<SectionHeader title="Education" />
+				{
+					cv.education.map((edu) => (
+						<ExperienceEntry
+							title={edu.title}
+							time={edu.time}
+							location={edu.location}
+							description={edu.description}
+							listItems={edu.listItems}
+						/>
+					))
+				}
+			</section>
+
+			<section>
+				<SectionHeader title="Projects" />
+				{
+					cv.projects.map((project) => (
+						<ExperienceEntry
+							title={project.title}
+							time={project.time}
+							description={project.description}
+							listItems={project.listItems}
+						/>
+					))
+				}
+			</section>
+		</div>
+	</body>
+</html>

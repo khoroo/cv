@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* A4 size styling */
+@media screen {
+	body {
+		background-color: #f0f0f0;
+		margin: 0;
+		padding: 20px;
+	}
+
+	.page {
+		width: 210mm;
+		min-height: 297mm;
+		padding: 15mm;
+		margin: 10mm auto;
+		background: white;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.page::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border: 1px solid #e0e0e0;
+		pointer-events: none;
+	}
+}
+
+/* Print-specific styling */
+@media print {
+	@page {
+		size: A4;
+		margin: 15mm;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	.page {
+		width: 100%;
+		min-height: auto;
+		box-shadow: none;
+		margin: 0;
+		padding: 0;
+		page-break-after: always;
+	}
+
+	.page::after {
+		display: none;
+	}
+
+	/* Only prevent extreme breaking cases */
+	h1,
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	/* Only prevent headers from being orphaned */
+	h1+p,
+	h2+p,
+	h3+p {
+		page-break-before: avoid;
+	}
+
+	/* Allow sections to break more naturally */
+	section {
+		page-break-inside: auto;
+	}
+
+	/* Prevent single lines of a list from being separated */
+	li {
+		page-break-inside: avoid;
+	}
+}

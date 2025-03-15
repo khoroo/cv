@@ -1,0 +1,14 @@
+---
+const { title, time, location, description, listItems } = Astro.props;
+---
+
+<div class="mb-4">
+    <h3 class="text-lg font-semibold">{title} <span class="text-gray-600 font-normal">{time}</span></h3>
+    <p class="text-gray-700">{location}</p>
+    <p class="text-gray-700">{description}</p>
+    <ul class="list-disc list-inside ml-4">
+        {listItems.map((item: string) => (
+            <li>{item}</li>
+        ))}
+    </ul>
+</div>

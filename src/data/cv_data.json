@@ -1,0 +1,104 @@
+{
+  "personal": {
+    "name": "Robert Sparks",
+    "contacts": [
+      { 
+        "icon": "✉️", 
+        "link": "mailto:sjbsy9h6l@mozmail.com", 
+        "text": "sjbsy9h6l@mozmail.com" 
+      },
+      { 
+        "icon": "linkedin", 
+        "link": "https://www.linkedin.com/in/r-sparks/", 
+        "text": "linkedin.com/in/r-sparks/" 
+      },
+      { 
+        "icon": "github", 
+        "link": "https://github.com/khoroo", 
+        "text": "github.com/khoroo" 
+      },
+      { 
+        "icon": "🌐", 
+        "link": "https://robert.sparks.me.uk", 
+        "text": "robert.sparks.me.uk" 
+      }
+    ]
+  },
+  "summary": "Data scientist and AI specialist with a strong mathematical foundation and diverse programming skills. Experienced in developing and analysing AI models, with proficiency in statistical modelling and machine learning techniques. Adept at quickly adapting to new technologies and solving complex problems in AI and data science.",
+  "skills": [
+    { "title": "Programming Languages", "items": "Python, SQL, R, Go, C, Matlab, Rust, LaTeX" },
+    { "title": "Python Libraries", "items": "NumPy, Pandas, Seaborn, Matplotlib, OR-tools, PyTorch, SciPy, Scikit-learn, Pandas, Keras, Tensorflow" },
+    { "title": "DevOps", "items": "Nix, Docker, AWS (S3, EC2, DynamoDB, Redshift, AirFlow), Databricks" },
+    { "title": "Skills", "items": "Git, UNIX, Bash, Apache Spark, Databricks, CI/CD, Agile Methodologies, Jira, Analytical Skills, Statistics" }
+  ],
+  "experience": [
+    {
+      "title": "Data Annotation",
+      "time": "Jan 2024 - Present",
+      "location": "",
+      "description": "",
+      "listItems": [
+        "Trained AI models in programming skills through direct interactions and code analysis",
+        "Provided detailed feedback on AI performance and rewrote code when necessary",
+        "Analysed Python programs, including AST-based entropy calculations",
+        "Utilised Nix to test code across multiple programming languages"
+      ]
+    },
+    {
+      "title": "Gousto",
+      "time": "Jan 2021 - Jul 2022",
+      "location": "Data Scientist London, UK",
+      "description": "",
+      "listItems": [
+        "Developed two data products in small team, researching, supporting engineers to bring into production, and building data pipelines for analysts using PySpark and Databricks.",
+        "Applied queuing theory and statistics to answer questions posed by stakeholders on future factory quality assurance throughput and the risk posed by traffic for stock transfer.",
+        "Took responsibility for enabling simulation of a new factory in-house, utilising the tool to analyse the necessary algorithm iterations and inform decision making when scaling the business.",
+        "Simulated entire supply chain, analysed results and presented to stakeholders to enable informed decisions on key business objective of menu scaling.",
+        "Collaborated with Data Scientists from other teams during side project time to ensure simulated orders had the same distribution as the aggregate forecast.",
+        "A product allocating orders to factories, reducing delivery costs.",
+        "A product allocating ingredients to factories, increasing peak capacity."
+      ]
+    },
+    {
+      "title": "Wriggle",
+      "time": "Jun 2019 - Jan 2020",
+      "location": "Data Scientist Bristol, UK",
+      "description": "",
+      "listItems": [
+        "Investigated referral scheme, uncovered thousands of pounds of fraud, prompting an overhaul of marketing strategy.",
+        "Leveraged analytics to drive business development and marketing strategies including customer lifetime modelling, acquisition, retention and win backs."
+      ]
+    },
+    {
+      "title": "University of Bristol",
+      "time": "Jan 2018 - May 2020",
+      "location": "Teaching Assistant Bristol, UK",
+      "description": "",
+      "listItems": [
+        "Supported students learning introductory and further programming in Python and C in a lab environment."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "University of Bristol",
+      "time": "Sep 2016 - Sep 2020",
+      "location": "MEng Engineering Mathematics, 2:1 Bristol, UK",
+      "description": "",
+      "listItems": [
+        "Modules: Mathematical and Data Modelling, Applied Deep Learning, Data Science, Dynamics of Networks, Optimisation, Discrete Mathematics",
+        "Dissertation on interpretability of machine learning models applied to smart home data."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Image Dithering Program",
+      "time": "Jun 2023",
+      "description": "",
+      "listItems": [
+        "Developed Rusticate, a user-friendly command-line image dithering application. The program allows grayscale or color dithering based on user preference."
+      ]
+    }
+  ]
+}
