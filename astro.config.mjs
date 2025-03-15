@@ -23,4 +23,5 @@ export default defineConfig({
   },
   devToolbar: { enabled: false },
   integrations: [pdf(options)],
+  base: '/cv/',
 });
