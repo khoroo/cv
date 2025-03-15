@@ -2,15 +2,20 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import pdf from 'astro-pdf';
+import { internalSpreadAttributes } from 'astro/runtime/server/render/util.js';
 
-// Define which CV data file to use (can be overridden with environment variables)
 const CV_DATA_FILE = process.env.CV_DATA_FILE || 'cv_data.json';
-
+const GENERATE_PDF = process.env.GENERATE_PDF === 'true';
 const options = {
   pages: {
     '/cv/': 'cv.pdf',
   }
 }
+const integrations = [];
+if (GENERATE_PDF) {
+  integrations.push(pdf(options));
+}
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +27,6 @@ export default defineConfig({
     }
   },
   devToolbar: { enabled: false },
-  integrations: [pdf(options)],
-  site: 'https://robert.sparks.me.uk',
-  base: 'cv',
+  integrations: integrations,
+  base: '/cv/',
 });
