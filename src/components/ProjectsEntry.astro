@@ -1,6 +1,7 @@
 ---
 import githubSvg from '../assets/icons/github.svg?raw';
 import wwwSvg from '../assets/icons/www.svg?raw';
+import linkSvg from '../assets/icons/external-link.svg?raw';
 const { title, time, description, listItems, githubLink, websiteLink, techUsed } = Astro.props;
 ---
 
@@ -16,14 +17,14 @@ const { title, time, description, listItems, githubLink, websiteLink, techUsed }
             {githubLink && (
                 <a href={githubLink} class="text-gray-700 hover:text-blue-600 transition-colors flex items-center text-sm">
                     <span class="mr-1">GitHub</span>
-                    <span set:html={githubSvg} />
+                    <span class="inline-flex items-center" style="line-height: 0;" set:html={githubSvg} />
                 </a>
             )}
 
             {websiteLink && (
                 <a href={websiteLink} class="text-gray-700 hover:text-blue-600 transition-colors flex items-center text-sm">
                     <span class="mr-1">Link</span>
-                    <span set:html={wwwSvg} />
+                    <span class="inline-flex items-center" style="line-height: 0;" set:html={linkSvg} />
                 </a>
             )}
         </div>

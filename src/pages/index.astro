@@ -9,6 +9,7 @@ import Skills from "../components/Skills.astro";
 import linkedinSvg from "../assets/icons/linkedin.svg?raw";
 import githubSvg from "../assets/icons/github.svg?raw";
 import wwwSvg from "../assets/icons/www.svg?raw";
+import linkSvg from "../assets/icons/external-link.svg?raw";
 
 // Import CV data from src/data
 import cv from "../data/cv_data.json";
@@ -42,7 +43,7 @@ const renderIcon = (icon: string): string => {
 					{
 						cv.personal.contacts.map((contact) => (
 							<p class="flex items-center">
-								<span class="mr-1" set:html={renderIcon(contact.icon)} />
+								<span class="inline-flex items-center mr-1" style="line-height: 0;" set:html={renderIcon(contact.icon)} />
 								<a
 									href={contact.link}
 									class="text-blue-500 hover:underline"
