@@ -18,7 +18,7 @@
         "text": "github.com/khoroo" 
       },
       { 
-        "icon": "🌐", 
+        "icon": "www", 
         "link": "https://robert.sparks.me.uk", 
         "text": "robert.sparks.me.uk" 
       }
@@ -93,11 +93,14 @@
   ],
   "projects": [
     {
-      "title": "Image Dithering Program",
-      "time": "Jun 2023",
+      "title": "Infinite lunch",
+      "time": "Mar 25",
       "description": "",
+      "githubLink":  "https://github.com/khoroo/infinite-lunch/",
+      "websiteLink":"https://robert.sparks.me.uk/infinite-lunch/",
       "listItems": [
-        "Developed Rusticate, a user-friendly command-line image dithering application. The program allows grayscale or color dithering based on user preference."
+        "Is it possible to travel the world such that between travel you are always in lunchtime, local time? This web app answers that question.",
+        "A TypeScript single page application, hosted on GitHub Pages with CI/CD"
       ]
     }
   ]

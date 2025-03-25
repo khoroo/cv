@@ -4,35 +4,51 @@ const { title, time, description, listItems, githubLink, websiteLink, techUsed }
 
 <div class="mb-4">
     <h3 class="text-lg font-semibold">{title} <span class="text-gray-600 font-normal">{time}</span></h3>
-    <p class="text-gray-700">{description}</p>
     
-    {githubLink && (
-        <p>
-            <span class="font-bold">
-			<svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" style="display: inline-block; vertical-align: middle;"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.48.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.696-2.782.602-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.027 1.531 1.027.892 1.526 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.258-4.551-1.11-4.551-4.935 0-1.09.39-1.988 1.029-2.688-.103-.258-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026.797-.22 1.65-.33 2.503-.33.854 0 1.708.11 2.503.33 1.91-1.296 2.75-1.026 2.75-1.026.546 1.378.202 2.392.098 2.65.64.7 1.028 1.598 1.028 2.688 0 3.834-2.339 4.675-4.566 4.922.359.309.675.92.675 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.687.479C19.137 20.156 22 16.425 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-			</span>
-            <a href={githubLink} class="text-blue-500 hover:underline">{githubLink}</a>
-        </p>
-    )}
+    <table class="w-full mb-2">
+        <tbody>
+            <tr>
+                <td class="align-top pr-4 py-1 text-gray-700">{description}</td>
+            </tr>
+            <tr>
+                <td class="align-top py-1">
+                    <div class="flex gap-4 items-center">
+                        {githubLink && (
+                            <a href={githubLink} class="text-blue-500 hover:underline">
+                                GitHub
+                                <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" style="display: inline-block; vertical-align: middle;"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.84 9.48.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.696-2.782.602-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.027 1.531 1.027.892 1.526 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.258-4.551-1.11-4.551-4.935 0-1.09.39-1.988 1.029-2.688-.103-.258-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026.797-.22 1.65-.33 2.503-.33.854 0 1.708.11 2.503.33 1.91-1.296 2.75-1.026 2.75-1.026.546 1.378.202 2.392.098 2.65.64.7 1.028 1.598 1.028 2.688 0 3.834-2.339 4.675-4.566 4.922.359.309.675.92.675 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.687.479C19.137 20.156 22 16.425 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                            </a>
+                        )}
 
-    {websiteLink && (
-        <p>
-            <span class="font-bold">🌐</span>
-            <a href={websiteLink} class="text-blue-500 hover:underline">{websiteLink}</a>
-        </p>
-    )}
-
-    {techUsed && (
-        <div class="flex flex-wrap gap-2">
-            {techUsed.map((tech: string) => (
-                <span class="bg-gray-200 px-2 py-1 rounded-md text-sm">{tech}</span>
-            ))}
-        </div>
-    )}
-
-    <ul class="list-disc list-inside ml-4">
-        {listItems.map((item: string) => (
-            <li>{item}</li>
-        ))}
-    </ul>
+                        {websiteLink && (
+                            <a href={websiteLink} class="text-blue-500 hover:underline">
+                                Link
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="display: inline-block; vertical-align: middle;" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path> </svg>
+                            </a>
+                        )}
+                    </div>
+                </td>
+            </tr>
+            {techUsed && (
+                <tr>
+                    <td class="align-top py-1">
+                        <div class="flex flex-wrap gap-2">
+                            {techUsed.map((tech: string) => (
+                                <span class="bg-gray-200 px-2 py-1 rounded-md text-sm">{tech}</span>
+                            ))}
+                        </div>
+                    </td>
+                </tr>
+            )}
+            <tr>
+                <td class="align-top py-1">
+                    <ul class="list-disc list-inside ml-4">
+                        {listItems.map((item: string) => (
+                            <li>{item}</li>
+                        ))}
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

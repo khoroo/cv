@@ -5,7 +5,7 @@ import pdf from 'astro-pdf';
 import { internalSpreadAttributes } from 'astro/runtime/server/render/util.js';
 
 const CV_DATA_FILE = process.env.CV_DATA_FILE || 'cv_data.json';
-const GENERATE_PDF = process.env.GENERATE_PDF === 'true';
+const GENERATE_PDF = process.env.GENERATE_PDF === '1';
 const options = {
   pages: {
     '/cv/': 'cv.pdf',
