@@ -2,7 +2,7 @@ name: Build and Deploy CV
 
 on:
   push:
-    branches: [ master ] 
+    branches: [ master ]
   workflow_dispatch:
 
 permissions:
@@ -12,8 +12,8 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    name: Build CV HTML with Nix
+    runs-on: ubuntu-latest # Directly specify the runner
+    name: Build CV for GitHub Pages # Simplified name
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,13 +22,14 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build with Nix
-        run: nix build .#resume --out-link ./result-build # Build the 'resume' package from flake.nix
-      - name: Rename HTML for GitHub Pages
-        run: mv ./result-build/resume.html ./result-build/index.html # Assumes make creates resume.html in the $out dir
+        # Build the default package for the runner's system
+        run: nix build . --out-link ./result-gh-pages
+      - name: List build output
+        run: ls -la ./result-gh-pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./result-build
+          path: ./result-gh-pages
 
   deploy:
     needs: build

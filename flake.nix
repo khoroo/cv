@@ -1,5 +1,7 @@
 {
-  inputs = { nixpkgs.url = "github:nixos/nixpkgs"; };
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+  };
 
   outputs = { self, nixpkgs }:
     let
@@ -21,22 +23,43 @@
       perSystem = nixpkgs.lib.genAttrs supportedSystems;
       pkgsFor = system: import nixpkgs { inherit system; };
 
-      buildResumeFor = system:
-        let pkgs = pkgsFor system;
-        in pkgs.runCommand "build-resume" {
-          nativeBuildInputs = with pkgs; [ pandoc texlive.combined.scheme-context ];
+      buildGithubPagesFor = system:
+        let
+          pkgs = pkgsFor system;
+          mainDocName = "cv"; # Adjust if your main markdown is e.g. resume.md
+        in pkgs.runCommand "github-pages-artifact" {
+          nativeBuildInputs = with pkgs; [ pandoc texlive.combined.scheme-context findutils ];
         } ''
+          # Build resume documents using Make; output will be in $out
           cd ${self}
-          make OUT_DIR="$out"
+          make OUT_DIR="$out" html pdf docx rtf
+
+          # Rename main HTML document to index.html
+          if [ -f "$out/${mainDocName}.html" ]; then
+            mv "$out/${mainDocName}.html" "$out/index.html"
+          else
+            echo "Warning: $out/${mainDocName}.html not found to rename to index.html."
+            echo "Files in $out:"
+            ls -la $out
+          fi
+
+          # Copy static assets from ./www (e.g., style.css), excluding www/index.html
+          if [ -d "${self}/www" ]; then
+            echo "Copying static assets from ${self}/www to $out"
+            # Copy files and directories from www, but not www/index.html itself
+            find ${self}/www -mindepth 1 -maxdepth 1 -not -name "index.html" -exec cp -r {} $out/ \;
+          fi
         '';
     in {
       packages = perSystem (system:
         let
-          resume = buildResumeFor system;
+          githubPages = buildGithubPagesFor system;
         in
         {
-          inherit resume;
-          default = resume;
+          inherit githubPages;
+          # You might want a 'resume' package as well if you build it differently locally
+          # For now, githubPages is the primary build product.
+          default = githubPages; 
         });
 
       devShells = perSystem (system: {

@@ -3,7 +3,7 @@ IN_DIR=markdown
 STYLES_DIR=styles
 STYLE=chmduquesne
 
-all: html pdf docx rtf
+all: html pdf docx rtf www
 
 pdf: init
 	for f in $(IN_DIR)/*.md; do \
@@ -40,6 +40,9 @@ rtf: init
 		echo $$FILE_NAME.rtf; \
 		pandoc --standalone $$SMART $$f --output $(OUT_DIR)/$$FILE_NAME.rtf; \
 	done
+
+www: init
+	cp -r www/* $(OUT_DIR)/
 
 init: dir version
 
