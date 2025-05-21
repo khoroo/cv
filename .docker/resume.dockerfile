@@ -1,8 +1,0 @@
-FROM drianthoderyme/pandoc-resume
-
-WORKDIR $HOME
-
-COPY . $GITHUB_WORKSPACE
-COPY ./Makefile $GITHUB_WORKSPACE
-
-WORKDIR $HOME/$APP_NAME

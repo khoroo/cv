@@ -1,63 +1,40 @@
-Tim Hopper
+Robert Sparks
 ============
 
 ----
 
-> 💻 I'm an experienced machine learning engineer and Python developer specializing in machine learning platforms, feature stores, and developer tooling. I aim to build tools that enable fast iteration on machine learning products that will drive business value and make customers happy.
+>Data scientist and AI specialist with a strong mathematical foundation and diverse programming skills. Experienced in developing and analysing AI models, with proficiency in statistical modelling and machine learning techniques. Adept at quickly adapting to new technologies and solving complex problems in AI and data science.
 
 ----
 
 Experience
 ----------
 
-#### [Spotify](https://www.spotify.com)<br>Machine Learning Infrastructure Engineer, *October 2024 – present*
+#### Data Annotation<br>*Jan 2024 - Present*
 
-* Support the music information retrieval researchers and productionize audio machine learning products
+* Trained AI models in programming skills through direct interactions and code analysis
+* Provided detailed feedback on AI performance and rewrote code when necessary
+* Analysed Python programs, including AST-based entropy calculations
+* Utilised Nix to test code across multiple programming languages
 
-#### [Varo Bank](https://www.varomoney.com/)<br>Sr. Staff Software Engineer, Machine Learning, *March 2024 - October 2024*<br>Staff Software Engineer, Machine Learning, *December 2021 - March 2024*
+#### Gousto<br>Data Scientist London, UK, *Jan 2021 - Jul 2022*
 
-* Developed machine learning platform for fraud detection, risk mitigation, lending, and marketing
-* Lead development of batch feature store using Tecton, enabling democratized feature creation and discovery
-* Guided team in implementing engineering best practices
+* Developed two data products in small team, researching, supporting engineers to bring into production, and building data pipelines for analysts using PySpark and Databricks.
+* Applied queuing theory and statistics to answer questions posed by stakeholders on future factory quality assurance throughput and the risk posed by traffic for stock transfer.
+* Took responsibility for enabling simulation of a new factory in-house, utilising the tool to analyse the necessary algorithm iterations and inform decision making when scaling the business.
+* Simulated entire supply chain, analysed results and presented to stakeholders to enable informed decisions on key business objective of menu scaling.
+* Collaborated with Data Scientists from other teams during side project time to ensure simulated orders had the same distribution as the aggregate forecast.
+* A product allocating orders to factories, reducing delivery costs.
+* A product allocating ingredients to factories, increasing peak capacity.
 
-#### [DTN](https://dtn.com) <br>Data Science Architect, *August 2020 – December 2021*
+#### Wriggle<br>Data Scientist Bristol, UK, *Jun 2019 - Jan 2020*
 
-* Built and maintained data science infrastructure with AWS and CloudFormation
-* Enabled machine learning product development by building tools and platforms for data scientists
-* Trained and mentored data scientists in Python tooling and software engineering practice
-* Strategized and led the development of AWS infrastructure for big data usability and accessibility 
+* Investigated referral scheme, uncovered thousands of pounds of fraud, prompting an overhaul of marketing strategy.
+* Leveraged analytics to drive business development and marketing strategies including customer lifetime modelling, acquisition, retention and win backs.
 
-#### [Blackberry | Cylance](https://www.blackberry.com/us/en/products/blackberry-cybersecurity) <br>Senior Data Scientist, *Nov 2017 – May 2020*
+#### University of Bristol<br>Teaching Assistant Bristol, UK, *Jan 2018 - May 2020*
 
-* Led development of feature store using serverless AWS infrastructure
-* Developed and maintained Python packages for data ingestion, cleaning, and standardization
-* Guided data science team in best practices for Python development and software testing
-* Researched machine learning techniques for dynamic detection of malware
-
-
-#### [Distil Networks](http://www.distilnetworks.com/) <br>Data Scientist, *Oct 2015 – Nov 2017*
-
-* Led research for validation of JavaScript-based client fingerprinting technique
-* Constructed hierarchical Bayesian models for analysis of internet user behavior
-* Lead development of real-time identification platform for malicious web bots on Apache Storm
-* Introduced team to best practices in Python development and data analysis
-
-#### [Qadium](https://qadium.com/) <br>Data Scientist, *Feb 2015 – Oct 2015*
-
-* Built [open-source tools](https://github.com/datamicroscopes/lda) in C++ and Python for topic modeling and inference on nonparametric Bayesian models
-* Wrote [instructional material](https://github.com/tdhopper/notes-on-dirichlet-processes/blob/master/README.md) for inference on nonparametric Bayesian models in with IPython notebooks
-* Maintained continuous integration with Travis-CI and automated deployment to Anaconda.org
-
-#### [Parse.ly](https://www.parsely.com/) <br>Software Engineer, *Jan 2014 – Feb 2015*
-
-* Developed algorithms in Python for aggregation of large-scale, streaming, time-series data
-* Built and maintained lambda architecture on AWS using Storm, Elasticsearch, Redis, and Cassandra
-* Contributed to [streamparse](https://github.com/parsely/streamparse), an open-source library for real-time stream processing in Python
-
-#### [RTI International](http://www.rti.org/) <br>Data Scientist, *Oct 2012 – Jan 2014*
-
-* Provided analytics and computational support for one of the nation's leading nonprofit research institutions
-* Contributed to projects on social media analysis for public health, environmental GIS modeling, nonlinear mixed effect modeling, and text-mining-based crime forecasting
+* Supported students learning introductory and further programming in Python and C in a lab environment.
 
 Technical Experience
 --------------------
@@ -65,42 +42,25 @@ Technical Experience
 Technical Tools
 :   I have an experience with a breadth of tools for machine learning, software development, and backend engineering.
 
-    * **Programming Languages (high proficiency):** Python
-    * **Programming Languages (some proficiency):** C++, Go, C#, Mathematica, R, SQL, Java, Javascript
-    * **Machine Learning Tools:** Scikit-Learn, PyTorch, MLFlow
-    * **Cloud Services:** Amazon Web Services (Batch, Lambda, ECS, S3, SQS, Glue)
-    * **Infrastructure and Configuration Tools**: Terraform, Cloud Formation, Ansible, Saltstack
-
-Open source contributions
-:   Contributor to a variety of Python libraries, including
-
-    [cpython](https://github.com/python/cpython/commits?author=tdhopper) · [datamicroscopes](https://datamicroscopes.github.io/) · [Streamparse](https://github.com/parsely/streamparse/commits?author=tdhopper) · [Conda](https://github.com/conda/conda/commits?author=tdhopper) · [lda](https://github.com/ariddell/lda/commits?author=tdhopper) · [Pandas](https://github.com/pandas-dev/pandas/commits?author=tdhopper)
+    * **Programming Languages:** Python, SQL, R, Go, C, Matlab, Rust, LaTeX
+    * **Python Libraries:** NumPy, Pandas, Seaborn, Matplotlib, OR-tools, PyTorch, SciPy, Scikit-learn, Pandas, Keras, Tensorflow
+    * **DevOps:** Nix, Docker, AWS (S3, EC2, DynamoDB, Redshift, AirFlow), Databricks
+    * **Skills:** Git, UNIX, Bash, Apache Spark, Databricks, CI/CD, Agile Methodologies, Jira, Analytical Skills, Statistics
 
 Education
 ---------
 
-2010-2012
-:   **Master of Operations Research**; North Carolina State University, Raleigh, NC
+Sep 2016 - Sep 2020
+:   **MEng Engineering Mathematics, 2:1**; University of Bristol, Bristol, UK
 
-    *Research area: Reinforcement learning methods for healthcare operations*
-
-    *Instructor: Calculus 2*
-
-2004-2008
-:   **BS, Mathematics**; Grove City College, Grove City, PA
-
-    *Minor in Applied Physics; Minor in Computer Science; Summa Cum Laude*
-
+    * Modules: Mathematical and Data Modelling, Applied Deep Learning, Data Science, Dynamics of Networks, Optimisation, Discrete Mathematics
+    * Dissertation on interpretability of machine learning models applied to smart home data.
 
 Personal Projects
 -----------------
 
-* [pydevtools.com](https://pydevtools.com): Ebook on Python developer tooling
-* [pythonplot.com](https://pythonplot.com): A Rosetta Stone of Python plotting libraries for exploratory data analysis
-* [Notes on Dirichlet Processes](https://dp.tdhopper.com): Notes on Dirichlet processes for nonparametric Bayesian methods
-* [Into the Hopper](https://podcast.tdhopper.com/): Podcast about machine learning and software engineering
+* [Infinite lunch](https://robert.sparks.me.uk/infinite-lunch/): Is it possible to travel the world such that between travel you are always in lunchtime, local time? This web app answers that question.
 
 ----
 
-> [tdhopper.com](https://tdhopper.com) • <resume@tdhopper.com> • (919) 473-3145 \
-> Raleigh, NC USA
+> [robert.sparks.me.uk](https://robert.sparks.me.uk) • <sjbsy9h6l@mozmail.com> • [linkedin.com/in/r-sparks/](https://www.linkedin.com/in/r-sparks/)
