@@ -22,8 +22,8 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Build with Nix
-        # Build the default package for the runner's system
-        run: nix build . --out-link ./result-gh-pages
+        # Build the web package for the runner's system
+        run: nix build .#web --out-link ./result-gh-pages
       - name: List build output
         run: ls -la ./result-gh-pages
       - name: Upload artifact
