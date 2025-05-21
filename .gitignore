@@ -1,9 +1,10 @@
 *.log
 *.swo
 *.swp
-output/
 result
 result-*
 .envrc
 .direnv
+
 .DS_Store
+notes

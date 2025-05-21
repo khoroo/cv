@@ -3,7 +3,7 @@ IN_DIR=markdown
 STYLES_DIR=styles
 STYLE=chmduquesne
 
-all: html pdf docx rtf www
+all: html pdf docx rtf
 
 pdf: init
 	for f in $(IN_DIR)/*.md; do \
@@ -11,7 +11,7 @@ pdf: init
 		echo $$FILE_NAME.pdf; \
 		pandoc --standalone --template $(STYLES_DIR)/$(STYLE).tex \
 			--from markdown --to context \
-			--variable papersize=A4 \
+			--lua-filter=linebreak.lua \
 			--output $(OUT_DIR)/$$FILE_NAME.tex $$f > /dev/null; \
 		mtxrun --path=$(OUT_DIR) --result=$$FILE_NAME.pdf --script context $$FILE_NAME.tex > $(OUT_DIR)/context_$$FILE_NAME.log 2>&1; \
 	done
@@ -23,8 +23,9 @@ html: init
 		pandoc --standalone --include-in-header $(STYLES_DIR)/$(STYLE).css \
 			--lua-filter=pdc-links-target-blank.lua \
 			--from markdown --to html \
+			--template templates/default.html \
 			--output $(OUT_DIR)/$$FILE_NAME.html $$f \
-			--metadata pagetitle=$$FILE_NAME;\
+			--metadata pagetitle="Robert Sparks CV";\
 	done
 
 docx: init
@@ -40,9 +41,6 @@ rtf: init
 		echo $$FILE_NAME.rtf; \
 		pandoc --standalone $$SMART $$f --output $(OUT_DIR)/$$FILE_NAME.rtf; \
 	done
-
-www: init
-	cp -r www/* $(OUT_DIR)/
 
 init: dir version
 
