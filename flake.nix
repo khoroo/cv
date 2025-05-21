@@ -58,7 +58,7 @@
           pkgs = pkgsFor system;
           # Assuming your Makefile has a target like 'resume.html' or similar
           # or that 'make html' produces 'cv.html'
-          mainHtmlFile = "cv.html"; # This should be the direct output of make html
+          mainHtmlFile = "resume.html"; # This should be the direct output of make html
                                       # before any renaming by make itself.
                                       # If make renames it to resume.html, use that.
                                       # Let's assume make produces cv.html from cv.md
